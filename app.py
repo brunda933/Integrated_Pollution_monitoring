@@ -126,3 +126,14 @@ with tab3:
             st.success("Soil is HEALTHY")
         else:
             st.error("Soil is CONTAMINATED")
+            # ---------------- GRAPH ----------------
+        st.subheader("📊 Soil Parameter Analysis")
+
+        soil_plot_df = pd.DataFrame({
+            "Parameter": soil_cols,
+            "Value": s_vals
+        })
+
+        st.bar_chart(
+            soil_plot_df.set_index("Parameter")
+        )
