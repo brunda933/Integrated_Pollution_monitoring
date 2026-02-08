@@ -52,6 +52,21 @@ with tab1:
             st.error("Water is UNSAFE")
 
         st.metric("Health Score", f"{score}%")
+        import matplotlib.pyplot as plt
+
+        params = water_cols
+        values = w_vals
+
+        fig, ax = plt.subplots(figsize=(10,5))
+
+        ax.plot(params, values, marker='o', color='blue')
+        ax.set_title("Water Quality Parameters")
+        ax.set_xlabel("Parameters")
+        ax.set_ylabel("Values")
+
+        plt.xticks(rotation=45)
+
+        st.pyplot(fig)
 
 
 # ---------------- AIR ----------------
