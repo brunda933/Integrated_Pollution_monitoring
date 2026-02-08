@@ -91,6 +91,17 @@ with tab2:
             st.success("Air is CLEAN")
         else:
             st.error("Air is POLLUTED")
+            # ---------------- GRAPH ----------------
+        st.subheader("📊 Air Parameter Analysis")
+
+        air_plot_df = pd.DataFrame({
+            "Parameter": air_cols,
+            "Value": a_vals
+        })
+
+        st.bar_chart(
+            air_plot_df.set_index("Parameter")
+        )
 
 
 # ---------------- SOIL ----------------
